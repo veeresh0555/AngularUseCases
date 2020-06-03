@@ -1,0 +1,67 @@
+<h1 appHighlight [styleObj]="style2" [defaultStyleObj]="defaultStyle">Add/Update Pet</h1>
+
+<form #petRef="ngForm" (ngSubmit)="submit(petRef)">
+    <table>
+        <tr>
+            <td>Pet Name</td>
+            <td><input type="text" placeholder="Enter Pet Name" [(ngModel)]="selectedPetData.name" name="name"
+                    #name="ngModel" required>
+                <div *ngIf="submitted && name.invalid" class="invalid-field">
+                    <p *ngIf="name.errors.required">Please Enter Pet Name </p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Pet Age</td>
+            <td>
+                <input type="number" placeholder="Enter Pet Age" [(ngModel)]="selectedPetData.age" name="age" #age="ngModel"
+                    required>
+                <div *ngIf="submitted && age.invalid" class="invalid-field">
+                    <p *ngIf="age.errors.required">Please Enter Pet Age </p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td> Address</td>
+            <td>
+            <input type="text" placeholder="Enter Address" [(ngModel)]="selectedPetData.address" name="address"
+                #address="ngModel" required>
+            <div *ngIf="submitted && address.invalid" class="invalid-field">
+                <p *ngIf="address.errors.required">Please Enter Address </p>
+            </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ng-container *ngIf="isAdd;else elseTemplate">
+                    <button type="submit">Add Pet</button>
+                </ng-container>
+
+                <ng-template #elseTemplate>
+                    <button type="submit">Update Pet</button>
+                </ng-template>
+            </td>
+        </tr>
+    </table>
+
+</form>
+<h1 appHighlight [styleObj]="style2" [defaultStyleObj]="defaultStyle">List of Pets</h1>
+<table id="pets">
+    <tr>
+        <th>Pet Name</th>
+        <th>Pet Age</th>
+        <th>Owner Email</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+
+    <tr *ngFor="let pet of pets;trackBy:trackById; let i=index">
+        <td>{{pet.name|titlecase}}</td>
+        <td>{{pet.age}}</td>
+        <td>{{pet.ownerEmail}}</td>
+        <td>{{pet.address}}</td>
+        <td><button class="btn2" (click)="onSelect(pet)">Select Pet</button>
+            <button class="btn2" (click)="deletePet(pet.id)">Delete Pet</button>
+        </td>
+    </tr>
+</table>

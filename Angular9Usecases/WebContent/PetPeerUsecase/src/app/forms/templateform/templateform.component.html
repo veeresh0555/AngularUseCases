@@ -1,0 +1,46 @@
+
+<div *ngIf="!loginSuccess">
+    <button class="btn1" (click)="loginClicked()" style="float: right;">Login</button>
+    <button class="btn1" (click)="signupClicked()">Signup</button>
+</div>
+<div *ngIf="login && !loginSuccess">
+    <h1>Login Form</h1>
+    
+    <form #loginRef="ngForm" (ngSubmit)="submit(loginRef)" >
+        <table>
+            <tr>
+              <td>Email ID:</td> <td><input type="email" name="email" placeholder="Enter Email" [(ngModel)]="model.email"  #email="ngModel" required   /></td>
+              <div *ngIf="submitted && email.invalid" class="invalid-field">
+                 <p *ngIf="email.errors.required">Email Id is required </p>
+                 
+              </div>
+            </tr>
+            <tr>
+                <td>Password: </td> <td><input type="password" name="password" placeholder="Enter Password"  [(ngModel)]="model.password"  #password="ngModel" required/></td>
+                <div *ngIf="submitted && password.invalid" class="invalid-field">
+                    <p *ngIf="password.errors.required">Password is required</p>
+                 </div>
+            </tr>
+            <tr><button class="btn2" type="submit">Submit</button></tr>
+        </table>
+    
+    </form>
+</div>
+
+
+<div *ngIf="signup">
+    <app-reactiveform></app-reactiveform>
+</div>
+<div *ngIf="userAdded">
+    <h1>User Added</h1>
+    
+    
+</div>
+
+<div *ngIf="loginSuccess">
+    <!-- <button (click)="loginClicked()" style="float: right;">Logout</button> -->
+    <app-pet-list></app-pet-list>
+</div>
+
+
+
