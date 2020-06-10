@@ -21,7 +21,7 @@ export class ReactiveFormComponent implements OnInit {
     password:''
   }
   baseUrl:string=`${environment.baseUrl}/users`;
-  pattern:string ="[A-Za-z0-9._%+-]*(@dbs.com|@hcl.com)";
+  pattern:string ="[A-Za-z0-9._%+-]*(@ddd.com|@ppp.com)";
   passwordPattern:string= "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@&]).{8,12}$";
   mobileNumberPattern:string= "^(\\+91)[0-9]{10}$";
   
