@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Your Orders</h1>
+  <div *ngIf="products.length === 0;" class="text-center my-5">
+    <h4>No Order Placed</h4>
+    <button class="btn btn-primary btn-lg mt-3" routerLink="/">GO TO SHOP</button>
+  </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Order Date</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let p of products">
+            <td>{{p.id}}</td>
+            <td>
+              <img src={{p.totalProducts.image}} alt={{p.totalProducts.name}} class="img-thumbnail" width="100px">
+            </td>
+            <td>{{p.totalProducts.name}}</td>
+            <td>{{p.OrderDate|date:'medium'}}</td>
+            <td>{{p.totalProducts.price | currency:'INR'}}</td>
+           <td>{{p.totalProducts.quantity}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+  

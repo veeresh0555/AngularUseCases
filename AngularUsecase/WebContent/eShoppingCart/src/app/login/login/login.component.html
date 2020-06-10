@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="logo">Login</div>
+    <div class="login-item" *ngIf="login && !loginSuccess">
+      <form #loginRef="ngForm" (ngSubmit)="submit(loginRef)" class="form form-login">
+        <div *ngIf="submitted && email.invalid" class="invalid-field">
+            <p *ngIf="email.errors.required">Email Id is required </p>   
+         </div>
+        <div class="form-field">
+          <label class="user" for="login-email"><span class="hidden">Email</span></label>
+          <input name="email" id="login-email" type="email" [(ngModel)]="model.email"  #email="ngModel" class="form-input" placeholder="Email" required>
+        </div>
+
+        <div class="form-field">
+            <div *ngIf="submitted && password.invalid" class="invalid-field">
+                <p *ngIf="password.errors.required">Password is required</p>
+            </div>
+          <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+          <input name="password" id="login-password" type="password" class="form-input" placeholder="Password" [(ngModel)]="model.password"  #password="ngModel" required>
+        </div>
+
+        <div class="form-field">
+          <button type="submit" class="btn-login">Log In</button>
+        </div>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
+
+    <div class="container">
+       <h1>Registration Form</h1>
+       <p>Please fill in this form to create an account.</p>
+       <hr>
+          <label for="firstName"><b>First Name</b></label>
+           <input type="text" name="firstName" placeholder="Enter First Name" formControlName="firstName" />
+           <div *ngIf="submitted && registerForm.controls.firstName.errors" class="invalid-field">
+              <p *ngIf="registerForm.controls.firstName.errors.required">First Name is Required</p>
+              <p *ngIf="registerForm.controls.firstName.errors.minlength">First Name Should Have Minimum 3 Characters</p>
+           </div>
+        
+ 
+           <label for="email"><b>Email</b></label>
+            <input type="email" name="email" placeholder="Enter Email" formControlName="email"/>
+            <div *ngIf="submitted && registerForm.controls.email.errors" class="invalid-field">
+             <p *ngIf="registerForm.controls.email.errors.required">Email is Required</p>
+             <p *ngIf="registerForm.controls.email.errors.pattern">Email Should Be Either HCL/DBS ID</p>
+          </div>
+        
+          
+          <label for="mobileNumber"><b>Mobile Number</b></label> 
+             <input type="text" name="mobileNumber" placeholder="Enter Mobile Number" formControlName="mobileNumber" />
+             <div *ngIf="submitted && registerForm.controls.mobileNumber.errors" class="invalid-field">
+             <p *ngIf="registerForm.controls.mobileNumber.errors.required">Mobile Number is Required</p>
+             <p *ngIf="registerForm.controls.mobileNumber.errors.pattern">Mobile Number Should Starts with +91 and should contain 10 digits </p>
+          </div>
+         
+          <label for="mobileNumber"><b>Address</b></label> 
+          <textarea name="address" placeholder="Enter Your Address" maxlength="100" rows="3" cols="20" formControlName="address" ></textarea>
+             <div *ngIf="submitted && registerForm.controls.address.errors" class="invalid-field">
+                 <p *ngIf="registerForm.controls.address.errors.required">Address  Is Required</p>
+                 <p *ngIf="registerForm.controls.address.errors.maxlength">Address  Should Contain Maximum Of 100 Characters</p>
+                
+              </div>
+        
+              
+              <label for="password"><b>Password</b></label> 
+              <input type="password" name="password" placeholder="Enter Password" formControlName="password" />
+              <div *ngIf="submitted && registerForm.controls.password.errors" class="invalid-field">
+                <p *ngIf="registerForm.controls.password.errors.required">Password is Required</p>
+                <p *ngIf="registerForm.controls.password.errors.minlength">Password Should Have Minimum 8 characters</p>
+                <p *ngIf="registerForm.controls.password.errors.maxlength">Password Should Have maximum 12 characters</p>
+                <p *ngIf="registerForm.controls.password.errors.pattern">Password Should Contain Atleast One Lower Case,Upper case,Number And Special Character </p>
+                
+             </div>
+          
+          <label for="confirmPassword"><b>Confirm Password</b></label> 
+             <input type="password" name="confirmPassword" placeholder="Re-Enter the Password" formControlName="confirmPassword" pattern="{{registerForm.controls.password.value}}" />
+             <div *ngIf="submitted && registerForm.controls.confirmPassword.errors" class="invalid-field">
+                <p *ngIf="registerForm.controls.confirmPassword.errors.required">Confirm Password is Required</p>
+                <p *ngIf="registerForm.controls.confirmPassword.errors.pattern">Both Password and Confirm Password Should Be Equal</p>
+             </div>
+             
+           <button type="submit" class="registerbtn">Register</button> 
+    </div>
+ </form>
+ 
