@@ -1,0 +1,52 @@
+{
+  "pets": [
+    {
+      "name": "jan",
+      "age": 1,
+      "ownerEmail": "tony@gmail.com",
+      "address": "erragadda",
+      "id": 1
+    },
+    {
+      "name": "tony",
+      "age": 3,
+      "address": "hyderabad",
+      "ownerEmail": "raju@hcl.com",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "firstName": "meghana",
+      "email": "meghana@hcl.com",
+      "mobileNumber": "+919874515478",
+      "address": "hyderabad",
+      "password": "Meghana@123",
+      "id": 1
+    },
+    {
+      "firstName": "veeru",
+      "email": "veeru@hcl.com",
+      "mobileNumber": "+913251457895",
+      "address": "hyderabad",
+      "password": "Veeru@123",
+      "id": 2
+    },
+    {
+      "firstName": "ramu",
+      "email": "ramu@hcl.com",
+      "mobileNumber": "+919635241451",
+      "address": "hyderabad ",
+      "password": "Ramu@123",
+      "id": 3
+    },
+    {
+      "firstName": "raju",
+      "email": "raju@hcl.com",
+      "mobileNumber": "+919874563215",
+      "address": "Sr nagar,hyderabad",
+      "password": "Ramu@1234",
+      "id": 4
+    }
+  ]
+}

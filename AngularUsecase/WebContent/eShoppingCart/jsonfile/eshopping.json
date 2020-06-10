@@ -1,0 +1,143 @@
+{
+  "users": [
+    {
+      "firstName": "meghana",
+      "email": "meghana@hcl.com",
+      "mobileNumber": "+919874515478",
+      "address": "hyderabad",
+      "password": "Meghana@123",
+      "id": 1
+    },
+    {
+      "firstName": "veeru",
+      "email": "veeru@hcl.com",
+      "mobileNumber": "+919574584521",
+      "address": "Hyderabad",
+      "password": "Veeru@123",
+      "id": 2
+    },
+    {
+      "firstName": "ramu",
+      "email": "ramu@hcl.com",
+      "mobileNumber": "+919632587415",
+      "address": "mumbai",
+      "password": "Ramu@123",
+      "id": 3
+    },
+    {
+      "firstName": "veeresh",
+      "email": "veeresh@hcl.com",
+      "mobileNumber": "+919874587451",
+      "address": "Hyderabad",
+      "password": "Veeresh@123",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "pid": 1,
+      "name": "Dell",
+      "category": "Electronics",
+      "description": "Dell Laptop",
+      "image": "assets/img/product01.png",
+      "price": "10000",
+      "oldprice": "25000",
+      "sale": "-30%",
+      "quantity": 1,
+      "rating": 4,
+      "images": "assets/img/product01.png",
+      "id": 1
+    },
+    {
+      "pid": 2,
+      "name": "HeadSet",
+      "category": "Electronics",
+      "description": "BOSS",
+      "image": "assets/img/product02.png",
+      "price": "5000",
+      "oldprice": "7500",
+      "sale": "-25%",
+      "quantity": 1,
+      "rating": 5,
+      "images": "assets/img/product02.png",
+      "id": 2
+    },
+    {
+      "pid": 3,
+      "name": "camara",
+      "category": "Electronics",
+      "description": "cannon",
+      "image": "assets/img/shop02.png",
+      "price": "35000",
+      "oldprice": "70000",
+      "sale": "-50%",
+      "quantity": 1,
+      "rating": 3,
+      "images": "assets/img/shop02.png",
+      "id": 3
+    }
+  ],
+  "orders": [
+    {
+      "userEmail": "meghana@hcl.com",
+      "totalProducts": {
+        "pid": 3,
+        "name": "camara",
+        "category": "Electronics",
+        "description": "cannon",
+        "image": "assets/img/shop02.png",
+        "price": "35000",
+        "oldprice": "70000",
+        "sale": "-50%",
+        "quantity": 1,
+        "rating": 3,
+        "images": "assets/img/shop02.png",
+        "id": 3
+      },
+      "OrderDate": "2020-06-07T16:52:30.066Z",
+      "id": 2
+    },
+    {
+      "userEmail": "veeresh@hcl.com",
+      "totalProducts": [
+        [
+          {
+            "incart": "1",
+            "id": 3,
+            "name": "camara",
+            "image": "assets/img/shop02.png",
+            "description": "cannon"
+          },
+          {
+            "incart": 1,
+            "id": 2,
+            "name": "HeadSet",
+            "image": "assets/img/product02.png",
+            "description": "BOSS"
+          }
+        ]
+      ],
+      "OrderDate": "2020-06-08T05:34:21.484Z",
+      "id": 3
+    },
+    {
+      "userEmail": "veeresh@hcl.com",
+      "totalProducts": {
+        "pid": 3,
+        "name": "camara",
+        "category": "Electronics",
+        "description": "cannon",
+        "image": "assets/img/shop02.png",
+        "price": "35000",
+        "oldprice": "70000",
+        "sale": "-50%",
+        "quantity": 1,
+        "rating": 3,
+        "images": "assets/img/shop02.png",
+        "id": 3
+      },
+      "OrderDate": "2020-06-08T05:36:46.367Z",
+      "id": 4
+    }
+  ]
+}
