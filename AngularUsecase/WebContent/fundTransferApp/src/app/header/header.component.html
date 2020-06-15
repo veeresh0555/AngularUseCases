@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="#" target="_blank" class="headtextTitle">Fund Transfer App</a></div>
+    <span class="nav-tool-items" *ngIf="loginSuccess">
+      <a mat-button class="hb" mat-raised-button routerLinkActive="active"href="#" routerLink="/ministmt" >Mini Statement</a>
+      <a mat-button class="hb" mat-raised-button routerLinkActive="active"href="#" routerLink="/addBeneficiary" >Add Benificiary</a>
+      <a mat-button class="hb" mat-raised-button routerLinkActive="active"href="#" routerLink="/fundTranfer" >Fund Transfer</a>
+      </span>
+      <span class="nav-tool-items" *ngIf="loginSuccess">
+        <a mat-button><i class="fa fa-user-o"></i>Hi, {{loginuser}}</a>
+        <a mat-button mat-raised-button routerLinkActive="active"href="#" (click)="logout()" >LogOut</a>
+      </span>
+  </mat-toolbar>

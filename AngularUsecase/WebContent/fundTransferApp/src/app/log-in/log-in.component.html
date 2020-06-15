@@ -1,0 +1,28 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box" *ngIf="login && !loginSuccess">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form" (ngSubmit)="submit(loginRef)" #loginRef="ngForm">
+        <mat-card-content>
+          <div *ngIf="submitted && email.invalid" class="invalid-field">
+            <p *ngIf="email.errors.required">*Email Id is required </p>   
+         </div>
+          <mat-form-field class="example-full-width">
+            <input name="email" id="login-email" type="email" [(ngModel)]="model.email"  #email="ngModel" matInput placeholder="Email" required>
+          </mat-form-field>
+  
+          <div *ngIf="submitted && password.invalid" class="invalid-field">
+            <p *ngIf="password.errors.required">*Password is required</p>
+        </div>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" name="password" id="login-password" type="password" [(ngModel)]="model.password"  #password="ngModel" required>
+          </mat-form-field>
+        </mat-card-content>
+        <button type="submit" mat-stroked-button color="accent" class="btn-block">Log in</button>
+      </form>
+    </mat-card>
+  
+  </div>

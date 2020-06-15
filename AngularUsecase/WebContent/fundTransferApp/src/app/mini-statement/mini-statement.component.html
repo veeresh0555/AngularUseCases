@@ -1,0 +1,37 @@
+    <mat-card class="ministmt-box">
+   <!-- <mat-form-field>
+        <mat-label>Filter</mat-label>
+       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia">
+      </mat-form-field> --> 
+   
+      <div class="mat-elevation-z8">
+        <table (matSortChange)="sortData($event)" id="transInf" matSort>
+            <tr>
+                <th mat-sort-header="frmaccount">From Account</th>
+                <th mat-sort-header="toaccount">To Account</th>
+                <th mat-sort-header="amount">Amount</th>
+                <th mat-sort-header="transdate">Transaction Date</th>
+                <th mat-sort-header="desc">Description</th>
+            </tr>
+            <tr *ngFor="let tranact of transData">
+                <td>{{tranact.frmaccount}}</td>
+                <td>{{tranact.toaccount}}</td>
+                <td>{{tranact.amount|currency:'INR'}}</td>
+                <td>{{tranact.transdate | date:'medium'}}</td>
+                <td>{{tranact.desc}}</td>
+            </tr>
+         
+        </table>
+        
+      
+       <!--<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>--> 
+      </div>
+      <button mat-raised-button color="primary" (click)="back()" class="btn-block">Go to DashBoard</button>
+    </mat-card>
+
+
+
+
+
+
+

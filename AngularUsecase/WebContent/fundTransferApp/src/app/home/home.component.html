@@ -1,0 +1,21 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+<mat-card class="accountbox">
+    <mat-card-header>
+        <mat-card-title>Account Details</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-list>
+            <mat-list-item>Customer Name: <b> {{customers[0].custname}}</b></mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Account Number: {{customers[0].accountNo}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Account Type: {{customers[0].accType}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Balance: {{customers[0].balance|currency:'INR'}}</mat-list-item>
+          </mat-list>
+        
+      </mat-card-content>
+
+
+</mat-card>
+</div>

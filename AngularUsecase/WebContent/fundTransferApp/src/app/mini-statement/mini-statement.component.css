@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  #transInf {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #transInf td, #transInf th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #transInf tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #transInf tr:hover {background-color: #ddd;}
+  
+  #transInf th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(10, 23, 97);
+    color: white;
+  }

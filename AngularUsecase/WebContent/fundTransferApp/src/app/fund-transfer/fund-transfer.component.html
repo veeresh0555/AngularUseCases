@@ -1,0 +1,34 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <form #onTransfer="ngForm" (ngSubmit)="fundTranSumbit(onTransfer,toaccount)">
+    <mat-card class="fund-box" >
+        <mat-card-header>
+            <mat-card-title>Fund Transfer</mat-card-title>
+          </mat-card-header>
+         <mat-card-content>
+            <h4>From Account</h4>
+            <mat-form-field class="example-full-width readOnly">
+                <input name="frmaccount" matInput value="{{customers[0].accountNo}}" [(ngModel)]="model.frmaccount" #frmaccount="ngModel" readonly > 
+              </mat-form-field>
+              
+              <h4>Select Beneficiary Account</h4>
+              <mat-form-field class="example-full-width">
+                <mat-label>Choose an Account</mat-label>
+                    <mat-select #toaccount  required>
+                        <mat-option *ngFor="let acc of benfAccounts" [value]="acc">{{acc.custname}}-{{acc.accountNo}}</mat-option>
+                    </mat-select>
+              </mat-form-field>
+              <h4>Amount</h4>
+              <mat-form-field class="example-full-width">
+                <input type="number" name="amount" matInput [(ngModel)]="model.amount" #amount="ngModel">
+                <mat-error *ngIf="amount.errors?.required">Please Enter Amount</mat-error>
+              </mat-form-field>
+              <h4>Description</h4>
+              <mat-form-field class="example-full-width">
+                <input type="text" name="desc" matInput [(ngModel)]="model.desc" #desc="ngModel">
+              </mat-form-field>
+
+            </mat-card-content>
+            <button type="submit" mat-stroked-button color="accent" class="btn-block">Transfer</button>
+    </mat-card>
+    </form>
+</div>
